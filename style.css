@@ -1,0 +1,692 @@
+
+@font-face {
+    font-family: 'malgun';
+    src: url("fonts/malgun.ttf");
+}
+@font-face {
+    font-family: 'MSGOTHIC';
+    src: url("fonts/MSGothic.ttf");
+}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+
+/****************** Start Global Rules ******************************/
+
+/* // Small devices (landscape phones, 320px and up) */
+
+@media (min-width: 319px) { 
+    .con{
+        width: 300px;
+    }
+}
+/* // Small devices (landscape phones, 576px and up) */
+
+
+@media (min-width: 576px) { 
+    .con{
+        width: 500px;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .con{
+        width: 700px;
+
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .con{
+        width: 800px;
+    }
+ }
+    
+    
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .con{
+        width: 900px;
+    
+    }   
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+h1,h2,h3,h4,p,ul,li,a{
+padding: 0;
+margin: 0;
+}
+
+body{
+       overflow-x: hidden;
+       position: relative;
+       min-height: 100%;
+   }
+*:focus{
+    outline: none;
+}
+
+
+html::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+
+    background-color: #152d35;
+    
+}
+::-webkit-scrollbar-thumb{
+    
+    background-color:#00ffab;
+
+}    
+/****************** End Global Rules ******************************/
+
+    .con{
+ 
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+/* Start Home */
+
+.home {
+    position: relative;
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+
+.home::after{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("imgs/back.png");
+    background-size: cover;
+    background-color:rgba(0, 0, 0, 44%);;
+    background-blend-mode: soft-light;
+    animation: backanim 70s ease-in alternate-reverse infinite;
+    
+}
+
+@keyframes backanim {
+    100%{
+        transform: scale(2);
+    }
+}
+
+
+.home .con .data{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.home .con .data h3{
+    font-size: 45px;
+    color: #EED600;
+    font-family: 'Malgun Gothic', sans-serif;
+    white-space: nowrap;
+    text-shadow: 1px 7px 17px #00000080;;
+    margin-bottom: 15px;
+    animation: head 1s ease-in-out 1 forwards;
+    
+}
+
+
+.home .con .data h3::after{
+content: '';
+position: absolute;
+top: 0;
+right: 20px;
+width: 5px;
+height: 100%;
+background-color: #EED600;
+opacity: 0;
+animation: after 1s 0.7s  ease-in-out backwards;
+}
+
+.home .con .data h3::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 20px;
+    width: 97%;
+    height: 5px;
+    background-color: #EED600;
+    opacity: 0;
+    animation: before 1s 1s 1 ease-in-out backwards;
+}
+
+@keyframes head {
+    0%{
+opacity: 0;
+transform: translateY(-300px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes after {
+    0%{
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+
+    }
+    50%{
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+
+    }
+    100%{
+        opacity: 0;
+        
+
+    }
+}
+
+@keyframes before {
+    0%{
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+    75%{
+        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.home .con .data p{
+    position: relative;
+    opacity: 0;
+    font-size: 30px;
+    color: white;
+    text-align: center; 
+    font-family: 'MS Gothic';
+    letter-spacing: 5;
+    text-shadow: 0 3px 17px (0,0,0 / 50%);
+    margin-bottom: 10px;
+    animation: para 3.5s 1.3s  ease 1 forwards;
+}
+
+.home .con .data p::before{
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 10px ;
+     width: 5px;
+    height: 135%;
+    background-color: #EED600;
+    animation: beforePara 2s 1.5s 1 forwards;
+    transform: scaleY(0);
+
+}
+
+@keyframes para {
+    0%{
+        opacity: 0;
+letter-spacing: 0;
+  
+    }
+    100%{
+        opacity: 1;
+        letter-spacing: 5;
+
+    }
+}
+
+@keyframes beforePara {
+    0%{
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    40%{
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+    100%{
+ 
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+
+
+}
+
+
+.home .con .data div{
+    color: #EED600;
+    font-size: 30px;
+    font-family:  'Malgun Gothic', sans-serif;
+    text-align: center;
+    text-shadow: 0 3px 17px (0,0,0 / 50%);
+    padding: 10px 20px;
+    background-color: transparent;
+    border-radius: 25px;
+    width: fit-content;
+    align-self: center;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1.3;
+    opacity: 0;
+    animation: btnn 1s 3.5s linear 1 forwards ;
+    transform: translateY(70px);
+    transform-origin: bottom center;
+}
+
+@keyframes btnn {
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+        transform-origin: center;
+    }
+    
+    }
+
+.home .con .data div:hover{
+    background-color:#0f465a;
+    color: white !important;
+    
+    
+}
+
+.home .br1{
+    position: absolute;
+    width: 100%;
+height: 5px;
+background-color:#EED600 ;
+bottom: 0;
+
+}
+
+
+@media (max-width: 767px) { 
+    .home .con .data h3{
+        font-size: 43px;
+        white-space: normal;
+        text-align: start;
+    }
+    .home .con .data p{
+        text-align: start;
+        font-size: 30;
+            margin-bottom: 25px;
+        }
+        .home .con .data div{
+            font-size: 25px;
+        }
+    }
+
+    /* End Home */
+
+
+    /* Start Dashboard */
+
+ .dashboard{
+min-height: 100vh;
+max-height: 100vh;
+position: relative;
+
+    }
+.dashboard::after{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("imgs/back.png");
+    background-size: cover;
+    background-position: center center;
+    background-color:rgba(0, 0, 0, 44%);
+}
+
+.dashboard h3{
+    font-size: 35px;
+    color: #EED600;
+    font-family:'Malgun Gothic', sans-serif ;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+
+.dashboard .con{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: transparent;
+    border: 3px solid #00ffab;
+    height: 75%;
+    border-radius: 25px;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+z-index: 1;
+    }
+
+    .dashboard .con:hover::before{
+        content: 'Thanks for shared me some time ♥ \\ln github@bedoohamdy';
+        position: absolute;
+        width:100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        font-family: "MS Gothic";
+        font-size: 25px;
+        font-weight: bold;
+        color: #1b1d1e;
+     background-color: #00ffab;
+     z-index: -1;
+
+    
+        }
+
+
+.dashboard .con .options{
+        height: 100%;
+        overflow: hidden;
+     
+    }
+
+/* Main Option  */
+
+    .dashboard .con .options .option{
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+   
+        border-radius: 25px;
+    }
+
+    @media (min-width:1439px) {
+        .dashboard .con .options .option{
+            height: 610px;
+        }
+    }
+
+/*Option's Clip Paths */
+    
+    .dashboard .con .options .option.new{
+        clip-path: polygon(0 0, 37% 0, 26% 100%, 0% 100%);
+        background-color: #1b7a9e;
+      
+
+    }
+
+    .dashboard .con .options .option.my{
+        background-color: #152D35;
+ 
+        clip-path: polygon(37% 0, 80% 0, 60% 100%, 26% 100%);
+    }
+
+    .dashboard .con .options .option.my h3{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: White;
+        font-size: 35px;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+    
+    .dashboard .con .options .option.done{
+        background-color: #1b1d1e;
+        clip-path: polygon(75% 0, 100% 0, 100% 100%, 60% 100%);
+    }
+
+/* Option's Hovers */
+
+    .dashboard .con .options:hover .option{
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+
+    .dashboard .con .options .option:hover{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        z-index: 1;
+    }
+
+    .dashboard .con .options .option .data-op{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-600px);
+        opacity: 0;
+        transition: 0.6s;
+        color: white;
+    } 
+
+    .dashboard .con .options .option:hover .data-op{
+        transform: translateY(0);
+        opacity: 1;
+ 
+    }
+
+    .dashboard .data-op h2{
+        font-size: 35px;
+        font-family: 'Malgun Gothic', sans-serif ;;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .dashboard .data-op i{
+        font-size: 40px;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .dashboard .data-op h2:hover{
+ 
+        color: yellow;
+        transition: 0.3s;
+        cursor: default;
+    }
+    .dashboard .data-op i:hover{
+ 
+        color: yellow;
+        transition: 0.3s;
+        cursor: default;
+    }
+
+
+
+    /* New Task Style */
+
+    .dashboard .option.new .data-op input{
+        width: 70%;
+margin: 15px auto;
+height: 45px;
+background-color: transparent;
+border: 2px solid white;
+border-radius: 25px;
+color: yellow;
+font-weight: bold;
+padding-left: 5px;
+font-size: 17px;
+text-align: center;
+cursor: pointer;
+
+    }
+
+    .dashboard .option.new .data-op input::placeholder{
+        color: white;
+        opacity: 0.5;
+        font-family: 'MS Gothic';
+    }
+    
+    
+    .dashboard .option.new .data-op button{
+        width: 25%;
+        height: 30px;
+        color: #1b7a9e;
+        font-size: 15px;
+        font-weight: bold;
+        font-family:'Malgun Gothic';
+        border-radius: 25px;
+        border:  3px solid white;
+        padding: 10px 20px;
+        margin: 15px auto 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        
+    }
+    
+
+    /* End New Task Style */
+
+
+    /* My Tasks Style => JS */
+
+    .dashboard .con .option.my {
+       justify-content: flex-start;
+       padding-top: 20px;
+       overflow-y: auto;
+
+    }
+
+    .dashboard .con .options .option.my .data-op div.task{
+        position: relative;
+        width: 80%;
+        height: 55px;
+        background-color:#00ffab;
+        border-radius: 25px;
+        margin: 20px auto;
+        padding: 0 20px;
+        color:#152D35;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dashboard .con .options .option.my .data-op .task i{
+        color: #152D35;
+        transition: 0.3s;
+    }
+
+    .dashboard .con .options .option.my .data-op .task i:hover{
+        color: white;
+    }
+ 
+    .dashboard .con .options .option.my .task h2{
+        color: #152D35;
+    }
+
+/* End My Tasks Style */
+
+/* Done Tasks Style */
+
+
+.dashboard .con .option.done {
+    justify-content: flex-start;
+    position: relative;
+}
+
+.dashboard .con .option.done .data-op  p{
+
+    position: relative;
+    margin-top: 45px;
+    color: white;
+    font-size: 35px;
+    font-family: 'MS Gothic', sans-serif;
+    letter-spacing: 5;
+    line-height: 1.8;
+    width: fit-content;
+
+
+}
+.dashboard .con .option.done .data-op p::before{
+
+    content: "";
+    position: absolute;
+    right: -20px;
+top:0;
+width: 5px;
+height: 100%;
+background-color: #00ffab;
+opacity: 0;
+
+}
+
+
+
+@keyframes righttrick {
+    0%{
+opacity: 0;
+transform: scaleY(0);
+transform-origin: top;
+    }
+    50%{
+        opacity: 1;
+transform: scaleY(1);
+transform-origin: top;
+    }
+    100%{
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        }
+    }
+
+
+.dashboard .con .option.done p:hover::before{
+    animation: righttrick 1s ease-in-out 1 forwards;
+}
+
+.dashboard .con .option.done .data-op{
+ padding-top: 20px;
+}
+.dashboard .con .option.done .data-op p{
+    cursor:default;
+}
+
+
+/* End Done Tasks Style */
+
+
+    
+    /* End Dashboard */
